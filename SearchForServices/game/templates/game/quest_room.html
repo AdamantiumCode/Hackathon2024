@@ -1,0 +1,30 @@
+{% extends "main.html" %}
+
+
+{% block content %}
+
+
+<h1>
+    {{ question }}
+</h1>
+
+<form method="POST">
+    {% csrf_token %}
+    {% for answer_data in data %}
+    <button type="answer" name="answer" value="{{ answer_data.1.id }}_{{ answer_data.0 }}">
+        {{ forloop.counter }}. {{ answer_data.0 }}
+    </button>
+    {% endfor %}
+</form>
+
+
+{% if parent is not None %}
+<h1>
+    <a href="{% url 'quest_room' pk=parent.id %}">
+        Назад
+    </a>
+</h1>
+{% endif %}
+
+
+{% endblock content %}

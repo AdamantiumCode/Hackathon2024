@@ -1,0 +1,16 @@
+{% load static %}
+{% comment %} 
+<style>
+    container{
+        display: flex;
+        display:inline-block;
+    }
+</style> {% endcomment %}
+
+<header>
+    <div class="container">
+        <a href="{% url 'home' %}">
+            <img class="logo" src={% static 'images/logo.svg' %} /><h1>Кемеровская область</h1>
+        </a>
+    </div>
+</header>

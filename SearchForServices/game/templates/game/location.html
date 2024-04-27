@@ -1,0 +1,22 @@
+{% extends "main.html" %}
+
+
+{% block content %}
+
+
+<form method="POST" action"{% url 'location' %}">
+    {% csrf_token %}
+    <label>Выберите ваш населенный пункт или район:</label>
+    <select id="my_select" name="location">
+    {% for locate in locations %}
+    {% if locate.name != "Неважно" %}
+        <option value="{{locate.name}}">{{locate.name}}</option>
+    {% endif %}
+    {% endfor %}
+    </select>
+
+    <input type="submit" name="submit_button" value="Выбрать" />
+</form>
+
+
+{% endblock content %}

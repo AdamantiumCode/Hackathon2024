@@ -1,0 +1,13 @@
+# Python плюшки
+.venv/
+__pycache__/
+
+# Плюшки от редакторов
+.idea/
+.anima/
+
+# Django плюшки
+migrations/
+
+# Безопасность
+db.*

@@ -1,0 +1,28 @@
+{% extends "main.html" %}
+
+
+{% block content %}
+
+
+{% for service in services %}
+<h2>
+
+{% if service.url is not None %}
+<a href="{{ service.url }}"
+    {{ forloop.counter }}. {{service}}
+</a>
+{% else %}
+{{ forloop.counter }}. {{service}}
+
+{% endif %}
+
+{% endfor %}
+
+<h2>
+<a href="{% url 'home' %}">
+    Назад
+</a>
+</h2>
+
+
+{% endblock content %}

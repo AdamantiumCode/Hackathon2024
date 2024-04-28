@@ -9,9 +9,7 @@
     <label>Выберите ваш населенный пункт или район:</label>
     <select id="my_select" name="location">
     {% for locate in locations %}
-    {% if locate.name != "Неважно" %}
         <option value="{{locate.name}}">{{locate.name}}</option>
-    {% endif %}
     {% endfor %}
     </select>
 

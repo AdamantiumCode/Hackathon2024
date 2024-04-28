@@ -4,10 +4,10 @@
 {% block content %}
 
 
-<h2>
+<h1>
     Возможно вы искали: <br>
     {% for service in services %}
-    <h3>
+    <h2>
         {% if service.url is not None %}
         <a href="{{ service.url }}">
         {{ forloop.counter }}. {{ service }}
@@ -15,14 +15,18 @@
         {% else %}
         {{ forloop.counter }}. {{ service }}
         {% endif %}
-    </h3>
+    </h2>
     {% endfor %}
 
     <br>
     <a href="{% url 'home' %}">
         Назад
     </a>
-</h2>
+    <br><br>
+    <a href="{% url 'all_services' %}">
+        Все услуги
+    </a>
+</h1>
 
 
 {% endblock content %}

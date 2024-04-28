@@ -17,7 +17,30 @@
         {% endif %}
     </h2>
     {% endfor %}
+</h1>
 
+<br><br>
+
+<h1>
+    Нет того, что вы искали? Вот схожие услуги?
+</h1>
+
+{% for service in maybe_search %}
+<h2>
+
+{% if service.url is not None %}
+<a href="{{ service.url }}"
+    {{ forloop.counter }}. {{service}}
+</a>
+{% else %}
+{{ forloop.counter }}. {{service}}
+
+{% endif %}
+
+{% endfor %}
+
+
+<h1>
     <br>
     <a href="{% url 'home' %}">
         Назад

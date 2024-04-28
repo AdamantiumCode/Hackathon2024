@@ -159,6 +159,7 @@ def result_page(request):
     
     context = {
         "services": result_services,
+        "maybe_search": all_services,
     }
     
     return render(request, "game/result.html", context)
